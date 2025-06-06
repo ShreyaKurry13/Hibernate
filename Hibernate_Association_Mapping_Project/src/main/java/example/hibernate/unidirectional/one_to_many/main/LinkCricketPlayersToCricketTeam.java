@@ -25,6 +25,7 @@ public class LinkCricketPlayersToCricketTeam {
 			
 			CricketTeam teamIndia = sessionObject.find(CricketTeam.class, "IND");
 			CricketTeam teamAustralia = sessionObject.find(CricketTeam.class, "AUS");
+			
 			Transaction tx = sessionObject.beginTransaction();
 			List<CricketPlayer> indianPlayers = List.of(player1,player2,player3);
 			teamIndia.setPlayer(indianPlayers);
