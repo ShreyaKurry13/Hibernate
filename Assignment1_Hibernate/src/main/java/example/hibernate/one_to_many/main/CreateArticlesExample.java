@@ -21,6 +21,7 @@ public class CreateArticlesExample {
 			Article article2 = new Article("A002","Floods",LocalDate.of(2026, 04, 21));
 			Article article3 = new Article("A003","News",LocalDate.of(2024, 04, 20));
 			
+			
 			Transaction tx = sessionObject.beginTransaction();
 				sessionObject.persist(article1);
 				sessionObject.persist(article2);

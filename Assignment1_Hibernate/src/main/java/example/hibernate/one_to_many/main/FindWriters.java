@@ -14,7 +14,7 @@ public class FindWriters {
 				SessionFactory sessionFactoryObject = HibernateUtils.getSessionFactory();
 				Session sessionObject = sessionFactoryObject.openSession()) 
 		{
-			Writer findWriter = sessionObject.find(Writer.class, 102);
+			Writer findWriter = sessionObject.find(Writer.class, 104);
 			if (findWriter==null) {
 				System.out.println("Writer ID does not exist");
 			}
