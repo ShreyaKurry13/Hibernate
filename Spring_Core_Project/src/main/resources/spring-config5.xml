@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"	
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!--  	<bean class="example.spring.core.MyBean" id="myBean"/>-->  <!--  for eager loading -->
+		<bean class="example.spring.core.Engine" id="simpleEngine">
+			<property name="type" value="Petrol"/>
+			<property name="power" value="1200 CC"/>
+		</bean>
+		
+		<bean class="example.spring.core.MusicSystem" id="simpleMusic">
+			<property name="make" value="Panasonic"/>
+			<property name="soundEffect" value="Mono Effect"/>
+		</bean>
+		
+		<bean class="example.spring.core.MusicSystem" id="premiumMusic" primary="true">
+			<property name="make" value="Sony"/>
+			<property name="soundEffect" value="Special Effect"/>
+		</bean>
+		
+		<bean class="example.spring.core.Car" id="simpleCar" autowire="byType">
+			<property name="make" value="Maruti"/>
+			<property name="model" value="Celereo"/>
+			<property name="price" value="5756500"/>
+			<!-- Spring will auto wire engine and music details -->
+		</bean>
+</beans>
