@@ -40,12 +40,11 @@ public class CarService {
     	carRepositoryRef.save(newCar);
     }
 
-	public void updateCar(Integer carId, Car modifiedCar) {
-		carRepositoryRef.save(carId,modifiedCar);
+	public void updateCar(Car modifiedCar) {
+		carRepositoryRef.save(modifiedCar);
 	}
 	
 	public void deleteCar(Integer carId) {
 		carRepositoryRef.deleteById(carId);
 	}
-
 }

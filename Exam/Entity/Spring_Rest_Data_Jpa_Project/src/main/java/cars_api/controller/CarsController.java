@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -49,17 +50,14 @@ public class CarsController {
     	carServiceRef.addCar(newCar);
     }
 	
-	@PutMapping("/cars-api/{carId}")
-	public void updateCar(@PathVariable Integer carId, @RequestBody Car updatedCar) {
-	    updatedCar.setCarId(carId); // ensure correct ID
-	    carServiceRef.updateCar(carId, updatedCar);
+    @PutMapping("/cars-api")
+	public void updateCar(@RequestBody Car modifiedCar) {
+		carServiceRef.updateCar(modifiedCar);
 	}
-
 	
 	@DeleteMapping("/cars-api/{carId}")
 	public void deleteCar(@PathVariable Integer carId) {
 	    carServiceRef.deleteCar(carId);
 	}
-
 	
 }
